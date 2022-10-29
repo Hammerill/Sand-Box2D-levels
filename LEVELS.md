@@ -21,7 +21,7 @@ Metadata contains information about level, its author and other info that might 
     "name": "Default level",
     "author": "Hammerill",
     "version": "v1.0.0",
-    "date": "2022-10-29"
+    "date": "2022-10-29",
     "..."
   }
 ```
