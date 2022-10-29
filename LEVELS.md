@@ -6,6 +6,7 @@ Every level file is just a JSON with the structure below:
 ```json
   {
     "metadata": {"..."},
+    "options": {"..."},
     "camera": {"..."},
     "objects": {"..."},
     "thread": {"..."},
@@ -39,6 +40,11 @@ When no preview specified, in the level selector menu (doesn't exists yet though
 - `screenshots: {"...", "..."}` - list of screenshots from the level in the same format as `preview`.
 
 And you can add custom fields to metadata if you think you need to do it.
+
+### Options sector
+Here are global world options located. If you want to keep settings by default, skip and don't write this sector in your file.
+It has the following structure:
+- No options yet. They'll appear here when they would be realized in the code.
 
 ### Camera sector
 In this sector described how Sand-Box2D should place camera at the start, can player move it and etc. It has the following structure:
