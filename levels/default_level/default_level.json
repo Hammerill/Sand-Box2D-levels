@@ -1,0 +1,19 @@
+{
+    "metadata": {
+        "name": "Default level",
+        "author": "Hammerill",
+        "version": "v1.0.0",
+        "date": "2022-10-29",
+        "description": "Default level for Sand-Box2D that also used as tutorial example."
+    },
+    "camera": {
+        "type": "static",
+        "zoom": true,
+        "move": true,
+        "x": 5,
+        "y": 4,
+        "height": 8
+    },
+    "objects": {"...": "..."},
+    "thread": {"...": "..."}
+}
