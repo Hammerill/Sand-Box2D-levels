@@ -33,11 +33,11 @@ Where 4 required fields (when publishing a level) are:
 - `date` - date of the level publication in YYYY-MM-DD format.
 
 It can also support the following fields:
-- `preview` - link to the image in PNG or JPG format with 16x9 aspect. 
-It's a thumbnail of the level, showing screenshot from the level itself or some illustration describing it. 
-When no preview specified, in the level selector menu (doesn't exists yet though) is fallback image showed.
+- `thumbnail` - link to the image in PNG or JPG format with 16x9 aspect. 
+It might be a screenshot from the level or some illustration describing it. 
+When no thumbnail specified, in the level selector menu (doesn't exists yet though) is fallback image showed.
 - `description` - detailed description text of the level.
-- `screenshots: {"...", "..."}` - list of screenshots from the level in the same format as `preview`.
+- `screenshots: {"...", "..."}` - list of screenshots from the level in the same format as `thumbnail`.
 
 And you can add custom fields to metadata if you think you need to do it.
 
