@@ -35,7 +35,7 @@ It can also support the following fields:
 - `thumbnail` - link to the image in PNG or JPG format with 16x9 aspect. 
 It might be a screenshot from the level or some illustration describing it. 
 When no thumbnail specified, in the level selector menu (doesn't exists yet though) is fallback image showed.
-- `screenshots: ["...", "..."]` - list of screenshots from the level in the same format as `thumbnail`.
+- `"screenshots": ["...", "..."]` - list of screenshots from the level in the same format as `thumbnail`.
 
 And you can add custom fields to metadata if you think you need to do it.
 
