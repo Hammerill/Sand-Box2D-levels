@@ -49,6 +49,7 @@ And you can add custom fields to metadata if you think you need to do it.
 
 ### Options sector
 Here are global world options located. If you want to keep settings by default, skip and don't write this sector in your file.
+
 It has the following structure:
 - No options yet. They'll appear here when they would be realized in the code.
 
@@ -142,7 +143,7 @@ It has the following structure:
   ]
 ```
 Where:
-- `"4000-8000"` - delay between cycle steps in milliseconds. Why it's a string read [there](#numbers-input).
+- `"4000-8000"` - delay between cycle steps in milliseconds. Why it's a string read [here](#numbers-input).
 
 Here we declare [box](./README-objects.md/#box) and [circle](./README-objects.md/#circle)
 with random width/height and radius respectively.
