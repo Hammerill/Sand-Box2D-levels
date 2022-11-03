@@ -6,6 +6,7 @@
         "date": "2022-10-29",
         "description": "Default level for Sand-Box2D that also used as tutorial example."
     },
+
     "camera": {
         "type": "static",
         "zoom": true,
@@ -14,6 +15,53 @@
         "y": 4,
         "height": 8
     },
-    "objects": {"...": "..."},
-    "thread": {"...": "..."}
+
+    "objects": [
+        {
+            "type": "platform",
+            "x1": 2,
+            "y1": 7,
+            "x2": 10,
+            "y2": 7
+        },
+        {
+            "type": "platform",
+            "x1": 1,
+            "y1": 1,
+            "x2": 2,
+            "y2": 7
+        },
+        {
+            "type": "platform",
+            "x1": 10,
+            "y1": 7,
+            "x2": 11,
+            "y2": 1
+        }
+    ],
+
+    "cycle": [
+        "4000-8000",
+        {
+            "type": "box",
+            "texture": "./box.png",
+            "x": 7,
+            "y": 0,
+            "w": "0.1-2.0",
+            "h": "0.1-2.0",
+            "angle": 0,
+            "vel_x": 10,
+            "vel_y": 10
+        },
+        {
+            "type": "circle",
+            "color": "FFFF80FF",
+            "color_angle": "FFFFFFFF",
+            "x": 5,
+            "y": 0,
+            "radius": "0.05-0.75",
+            "vel_x": -10,
+            "vel_y": 10
+        }
+    ]
 }
