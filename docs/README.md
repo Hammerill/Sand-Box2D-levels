@@ -2,8 +2,8 @@
 If you're new here, it's OK to begin with [README-levels.md](./README-levels.md).
 
 ## Topics
-- [Levels](./README-levels.md).
-- [Objects](./README-objects.md).
+- [Levels](./README-levels.md)
+- [Objects](./README-objects.md)
 
 ## Contributing
 After you've created your level, you're free to make a PR and publish it here.

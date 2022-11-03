@@ -1,6 +1,16 @@
 # Sand-Box2D Levels
 This is a documentation how Sand-Box2D operates with its levels files.
 
+## Contents
+- [Numbers input](#numbers-input)
+- [File structure](#file-structure)
+  * [Metadata sector](#metadata-sector)
+  * [Options sector](#options-sector)
+  * [Camera sector](#camera-sector)
+  * [Objects sector](#objects-sector)
+  * [Cycle sector](#cycle-sector)
+- [Samples](#samples)
+
 ## Numbers input
 You can input numbers in default JSON format (`"number": 123` or `"number_float": 12.3`), 
 but you can also input a string like that: `"random": "100-5000"`,
