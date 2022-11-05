@@ -1,4 +1,4 @@
-# Sand-Box2D Levels
+# Sand-Box2D Level File
 This is a documentation how Sand-Box2D operates with its levels files.
 
 ## Contents
@@ -25,7 +25,7 @@ Every level file is just a JSON with the structure below:
     "options": {"...": "..."},
     "camera": {"...": "..."},
     "objects": [{"...": "..."}, {"...": "..."}],
-    "cycle": ["...", {"...": "..."}, {"...": "..."}]
+    "cycles": [{"...": "..."}, {"...": "..."}]
   }
 ```
 
@@ -120,44 +120,50 @@ It has the following structure:
 ```
 In this example we just create 3 static [platforms](./README-objects.md/#platform).
 
-### Cycle sector
+### Cycles sector
 Read full [article](./README-objects.md) to understand how to create certain objects.
 
 This sector does the same thing as the [objects sector](#objects-sector), but periodically.
+You can declare several cycles with different delays.
 
 It has the following structure:
 ```json
-  "cycle": [
-    "4000-8000",
+  "cycles": [
     {
-      "type": "box",
-      "texture": "./box.png",
-      "x": 7,
-      "y": 0,
-      "w": "0.1-2.0",
-      "h": "0.1-2.0",
-      "angle": 0,
-      "vel_x": 10,
-      "vel_y": 10
-    },
-    {
-      "type": "circle",
-      "color": "FFFF80FF",
-      "color_angle": "FFFFFFFF",
-      "x": 5,
-      "y": 0,
-      "radius": "0.05-0.75",
-      "vel_x": -10,
-      "vel_y": 10
+      "delay": "200-400",
+      "objects": [
+        {
+          "type": "box",
+          "texture": "./box.png",
+          "x": 7,
+          "y": 0,
+          "w": "0.1-2.0",
+          "h": "0.1-2.0",
+          "angle": 0,
+          "vel_x": 10,
+          "vel_y": 10
+        },
+        {
+          "type": "circle",
+          "color": "FFFF80FF",
+          "color_angle": "FFFFFFFF",
+          "x": 5,
+          "y": 0,
+          "radius": "0.05-0.75",
+          "vel_x": -10,
+          "vel_y": 10
+        }
+      ]
     }
   ]
 ```
 Where:
-- `"4000-8000"` - delay between cycle steps in milliseconds. Why it's a string read [here](#numbers-input).
+- `delay` - amount of frames between cycle steps. Why its value is a string read [here](#numbers-input).
+- `objects` - should be filled with objects as [here](#objects-sector).
 
 Here we declare [box](./README-objects.md/#box) and [circle](./README-objects.md/#circle)
 with random width/height and radius respectively.
-They will spawn continuously every 4-8 seconds.
+They will spawn continuously every 200-400 frames (3-7 seconds).
 
 ## Samples
 You can refer to the [default level](../levels/default_level/) for example built with this tutorial.
