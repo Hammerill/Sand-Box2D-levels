@@ -1,0 +1,9 @@
+[
+    {
+        "directory": "default_level",
+        "level": "default_level.json",
+        "files": [
+            "img/box.png"
+        ]
+    }
+]

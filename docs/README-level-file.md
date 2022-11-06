@@ -1,5 +1,5 @@
 # Sand-Box2D Level File
-This is a documentation how Sand-Box2D operates with its levels files.
+In this document described how Sand-Box2D operates with its levels files.
 
 ## Contents
 - [Numbers input](#numbers-input)
