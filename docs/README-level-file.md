@@ -8,7 +8,7 @@ In this document described how Sand-Box2D operates with its levels files.
   * [Options sector](#options-sector)
   * [Camera sector](#camera-sector)
   * [Objects sector](#objects-sector)
-  * [Cycle sector](#cycle-sector)
+  * [Cycles sector](#cycles-sector)
 - [Samples](#samples)
 
 ## Numbers input
