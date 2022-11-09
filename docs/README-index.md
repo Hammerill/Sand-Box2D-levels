@@ -19,7 +19,7 @@ Index has the following structure:
     {
         "directory": "default_level",
         "level": "default_level.json",
-        "version": "v1.0.0"
+        "version": "v1.0.0",
         "files": [
             "img/box.png"
         ]
