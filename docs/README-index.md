@@ -8,12 +8,9 @@ Only purpose of index file existence is to help Sand-Box2D download levels local
 - [File structrure](#file-structrure)
 
 ## Notes
-- Level info (like its version) is stored in the
-[metadata sector of its file](./README-level-file.md/#metadata-sector),
-so index file only provides path to those files, not theirs info 
-(when you just update your level, you shouldn't consider updating index file, only if it's new file(s) added).
-- It's important to update version in your metadata. If you don't do it, Sand-Box2D will consider your level
+- It's important to update version in the index. If you don't do it, Sand-Box2D will consider your level
 as actual and won't update it even if there's really some changes.
+- Other metadata of the level are stored in its [main file](./README-level-file.md).
 
 ## File structrure
 Index has the following structure:
@@ -22,6 +19,7 @@ Index has the following structure:
     {
         "directory": "default_level",
         "level": "default_level.json",
+        "version": "v1.0.0"
         "files": [
             "img/box.png"
         ]
@@ -32,5 +30,6 @@ Where:
 - `directory` - path to the directory (relatively to the [levels directory](../levels/)) where level is located.
 Note that all the next paths will be considered as relative to it.
 - `level` - path to the [main level file](./README-level-file.md).
-- `files` - list of files that are used in the level. It's important to mark them here - 
+- `version` - version of the level. Should be the same as in metadata sector of the level's file. 
+- `files` - list of other files that are used in the level. It's important to mark them here - 
 if you don't, they won't be downloaded and be accessible from level file.
