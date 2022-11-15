@@ -16,14 +16,14 @@ as actual and won't update it even if there's really some changes.
 Index has the following structure:
 ```json
 [
-    {
-        "directory": "default_level",
-        "level": "default_level.json",
-        "version": "v1.0.0",
-        "files": [
-            "img/box.png"
-        ]
-    }
+  {
+    "directory": "default_level",
+    "level": "default_level.json",
+    "version": "v1.0.0",
+    "files": [
+      "img/box.png"
+    ]
+  }
 ]
 ```
 Where:
