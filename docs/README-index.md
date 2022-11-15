@@ -15,16 +15,16 @@ as actual and won't update it even if there's really some changes.
 ## File structrure
 Index has the following structure:
 ```json
-[
-  {
-    "directory": "default_level",
-    "level": "default_level.json",
-    "version": "v1.0.0",
-    "files": [
-      "img/box.png"
-    ]
-  }
-]
+  [
+    {
+      "directory": "default_level",
+      "level": "default_level.json",
+      "version": "v1.0.0",
+      "files": [
+        "img/box.png"
+      ]
+    }
+  ]
 ```
 Where:
 - `directory` - path to the directory (relatively to the [levels directory](../levels/)) where level is located.
