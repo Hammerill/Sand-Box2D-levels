@@ -20,13 +20,13 @@ Float numbers are also supported: `"random_float": "0.1-500.0"`.
 ## File structure
 Every level file is just a JSON with the structure below:
 ```json
-  {
-    "metadata": {"...": "..."},
-    "options": {"...": "..."},
-    "camera": {"...": "..."},
-    "objects": [{"...": "..."}, {"...": "..."}],
-    "cycles": [{"...": "..."}, {"...": "..."}]
-  }
+{
+  "metadata": {"...": "..."},
+  "options": {"...": "..."},
+  "camera": {"...": "..."},
+  "objects": [{"...": "..."}, {"...": "..."}],
+  "cycles": [{"...": "..."}, {"...": "..."}]
+}
 ```
 
 ### Metadata sector
@@ -34,13 +34,13 @@ This sector contains information about level, its author and other info that mig
 
 It has the following structure:
 ```json
-  "metadata": {
-    "name": "Default level",
-    "author": "Hammerill",
-    "version": "v1.0.0",
-    "date": "2022-10-29",
-    "...": "..."
-  }
+"metadata": {
+  "name": "Default level",
+  "author": "Hammerill",
+  "version": "v1.0.0",
+  "date": "2022-10-29",
+  "...": "..."
+}
 ```
 Where 4 required fields (when publishing a level) are:
 - `name` - name of the level.
@@ -68,14 +68,14 @@ In this sector described how Sand-Box2D should place camera at the start, can pl
 
 It has the following structure:
 ```json
-  "camera": {
-    "type": "static",
-    "zoom": true,
-    "move": true,
-    "x": 5,
-    "y": 4,
-    "height": 8
-  }
+"camera": {
+  "type": "static",
+  "zoom": true,
+  "move": true,
+  "x": 5,
+  "y": 4,
+  "height": 8
+}
 ```
 Where:
 - `type` - type of the camera. It can be:
@@ -94,29 +94,38 @@ This sector describes which physics objects Sand-Box2D need to create once at th
 
 It has the following structure:
 ```json
-  "objects": [
-    {
-      "type": "platform",
-      "x1": 2,
-      "y1": 7,
-      "x2": 10,
-      "y2": 7
-    },
-    {
-      "type": "platform",
-      "x1": 1,
-      "y1": 1,
-      "x2": 2,
-      "y2": 7
-    },
-    {
-      "type": "platform",
-      "x1": 10,
-      "y1": 7,
-      "x2": 11,
-      "y2": 1
-    }
-  ]
+"objects": [
+  {
+    "type": "platform",
+    "x1": 2,
+    "y1": 7,
+    "x2": 10,
+    "y2": 7,
+    "r": 255,
+    "g": 255,
+    "b": 0
+  },
+  {
+    "type": "platform",
+    "x1": 1,
+    "y1": 1,
+    "x2": 2,
+    "y2": 7,
+    "r": 255,
+    "g": 255,
+    "b": 0
+  },
+  {
+    "type": "platform",
+    "x1": 10,
+    "y1": 7,
+    "x2": 11,
+    "y2": 1,
+    "r": 255,
+    "g": 255,
+    "b": 0
+  }
+]
 ```
 In this example we just create 3 static [platforms](./README-objects.md/#platform).
 
@@ -128,34 +137,38 @@ You can declare several cycles with different delays.
 
 It has the following structure:
 ```json
-  "cycles": [
-    {
-      "delay": "200-400",
-      "objects": [
-        {
-          "type": "box",
-          "texture": "./box.png",
-          "x": 7,
-          "y": 0,
-          "w": "0.1-2.0",
-          "h": "0.1-2.0",
-          "angle": 0,
-          "vel_x": 10,
-          "vel_y": 10
-        },
-        {
-          "type": "circle",
-          "color": "FFFF80FF",
-          "color_angle": "FFFFFFFF",
-          "x": 5,
-          "y": 0,
-          "radius": "0.05-0.75",
-          "vel_x": -10,
-          "vel_y": 10
-        }
-      ]
-    }
-  ]
+"cycles": [
+  {
+    "delay": "200-400",
+    "objects": [
+      {
+        "type": "box",
+        "x": 7,
+        "y": 0,
+        "w": "0.1-2.0",
+        "h": "0.1-2.0",
+        "angle": 0,
+        "vel_x": 10,
+        "vel_y": 10,
+        "texture": "./box.png"
+      },
+      {
+        "type": "circle",
+        "x": 5,
+        "y": 0,
+        "radius": "0.05-0.75",
+        "vel_x": -10,
+        "vel_y": 10,
+        "r": 255,
+        "g": 128,
+        "b": 255,
+        "r_angle": 0,
+        "g_angle": 0,
+        "b_angle": 0
+      }
+    ]
+  }
+]
 ```
 Where:
 - `delay` - amount of frames between cycle steps. Why its value is a string read [here](#numbers-input).
