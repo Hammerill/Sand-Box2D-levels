@@ -13,9 +13,9 @@ In this document described how Sand-Box2D operates with its levels files.
 
 ## Numbers input
 You can input numbers in default JSON format (`"number": 123` or `"number_float": 12.3`), 
-but you can also input a string like that: `"random": "100-5000"`,
+but you can also input a string like that: `"random": "100:5000"`,
 it means that you want to input a *random* number between 100 and 5000.
-Float numbers are also supported: `"random_float": "0.1-500.0"`.
+Float and negative numbers are also supported: `"random_float": "-1.5:5"`.
 
 ## File structure
 Every level file is just a JSON with the structure below:
@@ -139,14 +139,14 @@ It has the following structure:
 ```json
   "cycles": [
     {
-      "delay": "200-400",
+      "delay": "200:400",
       "objects": [
         {
           "type": "box",
           "x": 7,
           "y": 0,
-          "w": "0.1-2.0",
-          "h": "0.1-2.0",
+          "w": "0.1:2.0",
+          "h": "0.1:2.0",
           "angle": 0,
           "vel_x": 10,
           "vel_y": 10,
@@ -156,7 +156,7 @@ It has the following structure:
           "type": "circle",
           "x": 5,
           "y": 0,
-          "radius": "0.05-0.75",
+          "radius": "0.05:0.75",
           "vel_x": -10,
           "vel_y": 10,
           "r": 255,
