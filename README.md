@@ -6,3 +6,5 @@ cloned locally to platform where Sand-Box2D is launched in order to load levels 
 
 ## Documentation
 For further info please refer to the [docs](./docs/).
+
+One day, when somebody will implement level editor, you wouldn't have to read them.

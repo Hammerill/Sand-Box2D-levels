@@ -4,7 +4,6 @@ In this document described how Sand-Box2D operates with its levels files.
 ## Contents
 - [Numbers input](#numbers-input)
 - [File structure](#file-structure)
-  * [Metadata sector](#metadata-sector)
   * [Options sector](#options-sector)
   * [Camera sector](#camera-sector)
   * [Objects sector](#objects-sector)
@@ -21,41 +20,12 @@ Float and negative numbers are also supported: `"random_float": "-1.5:5"`.
 Every level file is just a JSON with the structure below:
 ```json
   {
-    "metadata": {"...": "..."},
     "options": {"...": "..."},
     "camera": {"...": "..."},
     "objects": [{"...": "..."}, {"...": "..."}],
     "cycles": [{"...": "..."}, {"...": "..."}]
   }
 ```
-
-### Metadata sector
-This sector contains information about level, its author and other info that might be useful.
-
-It has the following structure:
-```json
-  "metadata": {
-    "name": "Default level",
-    "author": "Hammerill",
-    "version": "v1.0.0",
-    "date": "2022-10-29",
-    "...": "..."
-  }
-```
-Where 4 required fields (when publishing a level) are:
-- `name` - name of the level.
-- `author` - nickname of the level creator.
-- `version` - version of the level. Format like v1.0.0 is preferred.
-- `date` - date of the level publication in YYYY-MM-DD format.
-
-It can also support the following fields:
-- `description` - detailed description text of the level.
-- `thumbnail` - link to the image in PNG or JPG format with 16x9 aspect. 
-It might be a screenshot from the level or some illustration describing it. 
-When no thumbnail specified, in the level selector menu (doesn't exists yet though) is fallback image showed.
-- `"screenshots": ["...", "..."]` - list of screenshots from the level in the same format as `thumbnail`.
-
-And you can add custom fields to metadata if you think you need to do it.
 
 ### Options sector
 Here are global world options located. If you want to keep settings by default, skip and don't write this sector in your file.
@@ -72,8 +42,8 @@ It has the following structure:
     "type": "static",
     "zoom": true,
     "move": true,
-    "x": 5,
-    "y": 4,
+    "x": 6,
+    "y": 3.5,
     "height": 8
   }
 ```
@@ -139,7 +109,26 @@ It has the following structure:
 ```json
   "cycles": [
     {
-      "delay": "200:400",
+      "delay": "25:100",
+      "objects": [
+        {
+          "type": "circle",
+          "x": 5,
+          "y": 0,
+          "radius": "0.05:0.75",
+          "vel_x": -10,
+          "vel_y": 10,
+          "r": "0:255",
+          "g": "0:255",
+          "b": "0:255",
+          "r_angle": 0,
+          "g_angle": 0,
+          "b_angle": 0
+        }
+      ]
+    },
+    {
+      "delay": "100:200",
       "objects": [
         {
           "type": "box",
@@ -151,20 +140,6 @@ It has the following structure:
           "vel_x": 10,
           "vel_y": 10,
           "texture": "./box.png"
-        },
-        {
-          "type": "circle",
-          "x": 5,
-          "y": 0,
-          "radius": "0.05:0.75",
-          "vel_x": -10,
-          "vel_y": 10,
-          "r": 255,
-          "g": 128,
-          "b": 255,
-          "r_angle": 0,
-          "g_angle": 0,
-          "b_angle": 0
         }
       ]
     }
@@ -174,9 +149,10 @@ Where:
 - `delay` - amount of frames between cycle steps. Why its value is a string read [here](#numbers-input).
 - `objects` - should be filled with objects as [here](#objects-sector).
 
-Here we declare [box](./README-objects.md/#box) and [circle](./README-objects.md/#circle)
+Here we declare two cycles with [box](./README-objects.md/#box) and [circle](./README-objects.md/#circle)
 with random width/height and radius respectively.
-They will spawn continuously every 200-400 frames (3-7 seconds).
+Circles with random color will spawn continuously every 25-100 frames (0.5-2 seconds),
+and boxes will do it every 100-200 frames (2-3 seconds, ~2 times slower).
 
 ## Samples
 You can refer to the [default level](../levels/default_level/) for example built with this tutorial.

@@ -1,17 +1,10 @@
 {
-    "metadata": {
-        "name": "Default level",
-        "author": "Hammerill",
-        "version": "v1.0.0",
-        "date": "2022-10-29",
-        "description": "Default level for Sand-Box2D that also used as tutorial example."
-    },
     "camera": {
         "type": "static",
         "zoom": true,
         "move": true,
-        "x": 5,
-        "y": 4,
+        "x": 6,
+        "y": 3.5,
         "height": 8
     },
     "objects": [
@@ -48,7 +41,26 @@
     ],
     "cycles": [
         {
-            "delay": "200:400",
+            "delay": "25:100",
+            "objects": [
+                {
+                    "type": "circle",
+                    "x": 5,
+                    "y": 0,
+                    "radius": "0.05:0.75",
+                    "vel_x": -10,
+                    "vel_y": 10,
+                    "r": "0:255",
+                    "g": "0:255",
+                    "b": "0:255",
+                    "r_angle": 0,
+                    "g_angle": 0,
+                    "b_angle": 0
+                }
+            ]
+        },
+        {
+            "delay": "100:200",
             "objects": [
                 {
                     "type": "box",
@@ -60,20 +72,6 @@
                     "vel_x": 10,
                     "vel_y": 10,
                     "texture": "./box.png"
-                },
-                {
-                    "type": "circle",
-                    "x": 5,
-                    "y": 0,
-                    "radius": "0.05:0.75",
-                    "vel_x": -10,
-                    "vel_y": 10,
-                    "r": 255,
-                    "g": 128,
-                    "b": 255,
-                    "r_angle": 0,
-                    "g_angle": 0,
-                    "b_angle": 0
                 }
             ]
         }
