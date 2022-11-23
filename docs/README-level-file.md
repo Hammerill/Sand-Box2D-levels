@@ -36,10 +36,11 @@ It has the following structure:
 ### Camera sector
 In this sector described how Sand-Box2D should place camera at the start, can player move it and etc.
 
-It has the following structure:
+It has the following structure (key `attached_id` is exceed intentionally):
 ```json
   "camera": {
     "type": "static",
+    "attached_id": 15,
     "zoom": true,
     "move": true,
     "x": 6,
@@ -51,9 +52,12 @@ Where:
 - `type` - type of the camera. It can be:
   * `static` - camera doesn't move by itself. Player can move it and change zoom if it's allowed below.
   * `attached` - camera is attached to some object and spectates them. Zooming is allowed, but not movement.
+- `attached_id` - ID of the object to be spectated when camera type is attached 
+(more [here](./README-objects.md/#id)). Ignored when `type` is not `attached`.
 - `zoom` - can user change camera zoom in game (true/false)?
 - `move` - can user move camera in game? Ignored when `type` is `attached`.
-- `x` and `y` - starting position of the camera in Box2D meters. Ignored when `type` is `attached`.
+- `x` and `y` - starting position of the camera in Box2D meters
+(point to which camera is centered). Ignored when `type` is `attached`.
 - `height` - it used for setting zoom value at the beginning.
 It describes how much Box2D meters should camera capture in altitude, i.e. from screen top to bottom.
 
