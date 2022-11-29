@@ -6,6 +6,7 @@ In this document described how Sand-Box2D operates with its levels files.
 - [File structure](#file-structure)
   * [Options sector](#options-sector)
   * [Camera sector](#camera-sector)
+  * [Actions sector](#actions-sector)
   * [Objects sector](#objects-sector)
   * [Cycles sector](#cycles-sector)
 - [Samples](#samples)
@@ -22,6 +23,7 @@ Every level file is just a JSON with the structure below:
   {
     "options": {"...": "..."},
     "camera": {"...": "..."},
+    "actions": {"...": "..."},
     "objects": [{"...": "..."}, {"...": "..."}],
     "cycles": [{"...": "..."}, {"...": "..."}]
   }
@@ -61,6 +63,120 @@ Where:
 - `height` - it used for setting zoom value at the beginning.
 It describes how much Box2D meters should camera capture in altitude, i.e. from screen top to bottom.
 
+### Actions sector
+In this sector you can add some actions (move objects or something) that will perform when user press special buttons.
+
+With this thing you can change (set or add) any value of any object in-game.
+
+Here's example:
+```json
+  "actions": {
+    "up": {
+      "keydown_hold": [
+        {
+          "id": 10,
+          "type": "add",
+          "param": "vel_y",
+          "value": -0.1
+        }
+      ]
+    },
+    "right": {
+      "keydown_hold": [
+        {
+          "id": 10,
+          "type": "add",
+          "param": "vel_x",
+          "value": 0.1
+        }
+      ]
+    },
+    "down": {
+      "keydown_hold": [
+        {
+          "id": 10,
+          "type": "add",
+          "param": "vel_y",
+          "value": 0.1
+        }
+      ]
+    },
+    "left": {
+      "keydown_hold": [
+        {
+          "id": 10,
+          "type": "add",
+          "param": "vel_x",
+          "value": -0.1
+        }
+      ]
+    },
+    "enter": {
+      "keydown_once": [
+        {
+          "id": 10,
+          "type": "set",
+          "param": "vel_x",
+          "value": 0
+        },
+        {
+          "id": 10,
+          "type": "set",
+          "param": "vel_y",
+          "value": 0
+        },
+        {
+          "id": 10,
+          "type": "set",
+          "param": "angle",
+          "value": 0
+        }
+      ],
+      "keyup": [
+        {
+          "id": 10,
+          "type": "set",
+          "param": "vel_x",
+          "value": "-10:10"
+        },
+        {
+          "id": 10,
+          "type": "set",
+          "param": "vel_y",
+          "value": "-10:10"
+        }
+      ]
+    }
+  }
+```
+Where:
+- `up`, `right`, `down`, `left` and `enter` - corresponding buttons to call actions.
+Each game platform can have different buttons for this. They all can contain following keys:
+  * `keydown_hold` is called every frame when corresponding button is hold.
+  * `keydown_once` is called only once when user just pressed this button.
+  * `keyup` is called only once when user stopped holding this button.
+
+And all these keys are containing list of actions, one of them look like this:
+```json
+  {
+    "id": 10,
+    "type": "add",
+    "param": "vel_y",
+    "value": -0.1
+  }
+```
+Where:
+- `id` - [ID](./README-objects.md#id) of the object to be involved in this action.
+- `type` - type of the action:
+  * `set` - you want to set some object parameter to some value (`param = value`);
+  * `add` - you want to add something to the param of the object (`param += value`).
+- `param` - name of the object parameter to be modified.
+- `value` - value to be setted-added to object parameter.
+
+In this example we added move controls for the box with ID `10`. When we press directional
+buttons it starts to move in this direction. When we press `enter` button it stops, but
+if we stop pressing it, box will fly in random direction.
+
 ### Objects sector
 Read full [article](./README-objects.md) to understand how to create certain objects.
 
@@ -98,10 +214,23 @@ It has the following structure:
       "r": 255,
       "g": 255,
       "b": 0
+    },
+    {
+      "type": "box",
+      "id": 10,
+      "x": 6,
+      "y": 5,
+      "w": 2,
+      "h": 2,
+      "angle": 0,
+      "vel_x": 0,
+      "vel_y": 0,
+      "texture": "./box.png"
     }
   ]
 ```
-In this example we just create 3 static [platforms](./README-objects.md/#platform).
+In this example we just create 3 static [platforms](./README-objects.md/#platform)
+and [box](./README-objects.md/#box) with ID `10` (to which will point our [action](#actions-sector)).
 
 ### Cycles sector
 Read full [article](./README-objects.md) to understand how to create certain objects.
