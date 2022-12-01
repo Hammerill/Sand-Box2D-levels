@@ -70,7 +70,7 @@ Where:
 - `x` and `y` - position of the center of the box in Box2D meters.
 - `w` and `h` - width and height of the box in Box2D meters.
 Why its value is a string read [here](./README-level-file.md#numbers-input).
-- `angle` - angle of the box in radians.
+- `angle` - angle of the box in degrees.
 - `vel_x` and `vel_y` - starting linear velocity of the box (its speed).
 - `texture` - path to the texture of the box. 
 If several objects are using the same file, Sand-Box2D won't load them every time - 
