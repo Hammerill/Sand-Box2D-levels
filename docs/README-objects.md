@@ -17,7 +17,7 @@ Each object _can_ have unique ID (integer). It means that you don't have to set 
 In this case (when you don't manually set ID), it will be considered as `-1`.
 
 Setting ID will help us later with pointing to object which would be spectated by camera in attached mode, 
-making joints between objects and involving them in something that I'll do in future, named "actions".
+making joints between objects and involving them in "actions".
 
 To set ID (in this example `1337`) you just have to set its value like that:
 ```json

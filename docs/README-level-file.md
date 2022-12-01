@@ -77,7 +77,7 @@ Here's example:
           "id": 10,
           "type": "add",
           "param": "vel_y",
-          "value": -0.1
+          "value": -0.75
         }
       ]
     },
@@ -87,7 +87,7 @@ Here's example:
           "id": 10,
           "type": "add",
           "param": "vel_x",
-          "value": 0.1
+          "value": 0.75
         }
       ]
     },
@@ -97,7 +97,7 @@ Here's example:
           "id": 10,
           "type": "add",
           "param": "vel_y",
-          "value": 0.1
+          "value": 0.75
         }
       ]
     },
@@ -107,7 +107,7 @@ Here's example:
           "id": 10,
           "type": "add",
           "param": "vel_x",
-          "value": -0.1
+          "value": -0.75
         }
       ]
     },
@@ -137,13 +137,13 @@ Here's example:
           "id": 10,
           "type": "set",
           "param": "vel_x",
-          "value": "-10:10"
+          "value": "-100:100"
         },
         {
           "id": 10,
           "type": "set",
           "param": "vel_y",
-          "value": "-10:10"
+          "value": "-100:100"
         }
       ]
     }
@@ -162,7 +162,7 @@ And all these keys are containing list of actions, one of them look like this:
     "id": 10,
     "type": "add",
     "param": "vel_y",
-    "value": -0.1
+    "value": -0.75
   }
 ```
 Where:
