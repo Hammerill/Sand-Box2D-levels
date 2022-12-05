@@ -63,6 +63,7 @@ It has the following structure:
     "angle": 0,
     "vel_x": 10,
     "vel_y": 10,
+    "vel_ang": 0,
     "texture": "./box.png"
   }
 ```
@@ -72,6 +73,7 @@ Where:
 Why its value is a string read [here](./README-level-file.md#numbers-input).
 - `angle` - angle of the box in degrees.
 - `vel_x` and `vel_y` - starting linear velocity of the box (its speed).
+- `vel_ang` - starting angular velocity of the box (its rotating speed).
 - `texture` - path to the texture of the box. 
 If several objects are using the same file, Sand-Box2D won't load them every time - 
 it will use the same already loaded texture in the memory.
@@ -88,6 +90,7 @@ It has the following structure:
     "radius": "0.05:0.75",
     "vel_x": -10,
     "vel_y": 10,
+    "vel_ang": 0,
     "r": "0:255",
     "g": "0:255",
     "b": "0:255",
@@ -100,6 +103,7 @@ Where:
 - `x` and `y` - position of the center of the circle in Box2D meters.
 - `radius` - radius of the circle in Box2D meters.
 - `vel_x` and `vel_y` - starting linear velocity of the circle (its speed).
+- `vel_ang` - starting angular velocity of the circle (its rotating speed).
 - `r`, `g`, `b` - color of the circle.
 - `r_angle`, `g_angle`, `b_angle` - color of the angle renderer of the circle
 (line from circle center to border which shows how much circle is rotated).

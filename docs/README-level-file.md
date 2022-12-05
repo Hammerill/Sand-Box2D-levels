@@ -88,6 +88,12 @@ Here's example:
           "type": "add",
           "param": "vel_x",
           "value": 0.75
+        },
+        {
+          "id": 10,
+          "type": "add",
+          "param": "vel_ang",
+          "value": 0.25
         }
       ]
     },
@@ -108,6 +114,12 @@ Here's example:
           "type": "add",
           "param": "vel_x",
           "value": -0.75
+        },
+        {
+          "id": 10,
+          "type": "add",
+          "param": "vel_ang",
+          "value": -0.25
         }
       ]
     },
@@ -130,6 +142,26 @@ Here's example:
           "type": "set",
           "param": "angle",
           "value": 0
+        },
+        {
+          "id": 10,
+          "type": "set",
+          "param": "vel_ang",
+          "value": 0
+        }
+      ],
+      "keydown_hold": [
+        {
+          "id": 10,
+          "type": "set",
+          "param": "vel_x",
+          "value": 0
+        },
+        {
+          "id": 10,
+          "type": "set",
+          "param": "vel_y",
+          "value": -0.2
         }
       ],
       "keyup": [
@@ -222,9 +254,6 @@ It has the following structure:
       "y": 5,
       "w": 2,
       "h": 2,
-      "angle": 0,
-      "vel_x": 0,
-      "vel_y": 0,
       "texture": "./box.png"
     }
   ]
@@ -253,10 +282,7 @@ It has the following structure:
           "vel_y": 10,
           "r": "0:255",
           "g": "0:255",
-          "b": "0:255",
-          "r_angle": 0,
-          "g_angle": 0,
-          "b_angle": 0
+          "b": "0:255"
         }
       ]
     },
@@ -269,7 +295,6 @@ It has the following structure:
           "y": 0,
           "w": "0.1:2.0",
           "h": "0.1:2.0",
-          "angle": 0,
           "vel_x": 10,
           "vel_y": 10,
           "texture": "./box.png"
