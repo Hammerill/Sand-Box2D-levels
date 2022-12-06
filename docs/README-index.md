@@ -8,14 +8,9 @@ Only purpose of index file existence is to help Sand-Box2D download levels local
 - [File structrure](#file-structrure)
 
 ## Notes
-- It's important to update version in the index. If you don't do it, Sand-Box2D will consider your level
-as actual and won't update it even if there's really some changes.
-- Leave paths only to files relative to the "directory" field. Don't leave URLs or paths to files
-you didn't upload.
-- In level files you should use the same rules, but mostly files would be considered as relative of
-the subject file itself (like main level file), not strictly to the "directory" field.
-But in most cases you may prefer leaving main level file at the same path as "directory" field,
-so there would be no difference.
+- It's important to update version in the index. If you don't do it, Sand-Box2D will consider your level as actual and won't update it even if there's really some changes.
+- In index file, leave paths only to files relative to the "directory" field. Don't leave URLs or paths to files you didn't upload.
+- In level files you should use the same rules. All paths provided inside this file will also be always relative to the "directory" field.
 
 ## File structrure
 Index has the following structure:
