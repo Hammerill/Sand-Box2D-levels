@@ -43,7 +43,7 @@ It has the following structure (keys `attached_id` and `attached_remain` are exc
   "camera": {
     "type": "static",
     "attached_id": 15,
-    "attached_remain": 10,
+    "attached_remain": 75,
     "zoom": true,
     "move": true,
     "x": 6,
@@ -58,8 +58,8 @@ Where:
 - `attached_id` - ID of the object to be spectated when camera type is attached 
 (more [here](./README-objects.md/#id)). Ignored when `type` is not `attached`.
 - `attached_remain` - value that shows how many percents are left each frame when spectating object.
-If you leave 0, it will spectate object strictly, without smooth effect (it encounters object by 100% each frame).
-When you set 10, it means that camera is going to encounter object by 90%, which means that you're gonna see smooth effect.
+If you leave 0, camera will spectate object strictly, without smooth effect (it encounters object by 100% each frame).
+When you set 75, it means that camera is going to encounter object by 25% each frame, which means that you're gonna see smooth effect.
 If you set 100, camera won't move at all (it encounters object by 0% each frame, i.e. it's just static).
 If you set >100, camera will fly away from object (no sense to do that).
 Ignored when `type` is not `attached`.
