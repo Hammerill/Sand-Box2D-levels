@@ -38,11 +38,12 @@ It has the following structure:
 ### Camera sector
 In this sector described how Sand-Box2D should place camera at the start, can player move it and etc.
 
-It has the following structure (key `attached_id` is exceed intentionally):
+It has the following structure (keys `attached_id` and `attached_remain` are exceed intentionally):
 ```json
   "camera": {
     "type": "static",
     "attached_id": 15,
+    "attached_remain": 10,
     "zoom": true,
     "move": true,
     "x": 6,
@@ -56,6 +57,12 @@ Where:
   * `attached` - camera is attached to some object and spectates them. Zooming is allowed, but not movement.
 - `attached_id` - ID of the object to be spectated when camera type is attached 
 (more [here](./README-objects.md/#id)). Ignored when `type` is not `attached`.
+- `attached_remain` - value that shows how many percents are left each frame when spectating object.
+If you leave 0, it will spectate object strictly, without smooth effect (it encounters object by 100% each frame).
+When you set 10, it means that camera is going to encounter object by 90%, which means that you're gonna see smooth effect.
+If you set 100, camera won't move at all (it encounters object by 0% each frame, i.e. it's just static).
+If you set >100, camera will fly away from object (no sense to do that).
+Ignored when `type` is not `attached`.
 - `zoom` - can user change camera zoom in game (true/false)?
 - `move` - can user move camera in game? Ignored when `type` is `attached`.
 - `x` and `y` - starting position of the camera in Box2D meters
