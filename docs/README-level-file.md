@@ -30,10 +30,32 @@ Every level file is just a JSON with the structure below:
 ```
 
 ### Options sector
-Here are global world options located. If you want to keep settings by default, skip and don't write this sector in your file.
+In this sector are global world options located.
 
 It has the following structure:
-- No options yet. They'll appear here when they would be realized in the code.
+```json
+  "options": {
+    "bg_r": 50,
+    "bg_g": 50,
+    "bg_b": 50,
+    "gravity_x": 0,
+    "gravity_y": 9.81,
+    "border_width": 200,
+    "border_height": 200
+  }
+```
+Where:
+- `bg_r`, `bg_g` and `bg_r` - color of the world backround (RGB values from 0 to 255).
+Maybe later option `bg_texture` will appear, but I don't know yet how to scale it properly (add scaling options?).
+- `gravity_x` and `gravity_y` - world gravity force. If Y set to 9.81 objects will fall down vertically,
+if X is 0 objects won't move by themselves horizontally (like actual gravity).
+- `border_width` - width of world boundaries in Box2D meters. If set to 0 there's no borders
+(even if `border_height` value is set),
+meaning that objects cannot be deleted by moving too much away from center (that's dangerous for perfomance);
+if set to 200 it means that object can fly 100m to the right of world center and 100m to the left.
+If it will move any further it will be deleted if it doesn't have `undeletable` flag.
+- `border_height` - same as `border_width` but for height. If set to 0 there's no borders
+(even if `border_width` value is set).
 
 ### Camera sector
 In this sector described how Sand-Box2D should place camera at the start, can player move it and etc.
