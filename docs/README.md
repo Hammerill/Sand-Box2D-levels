@@ -5,6 +5,7 @@ If you're new here, read [contributing sector](#contributing).
 - [Level File](./README-level-file.md)
 - [Objects](./README-objects.md)
 - [Index](./README-index.md)
+- [Python](./README-python.md)
 
 ## Contributing
 It's good to make a separate directory for single level in the [levels directory](../levels/),

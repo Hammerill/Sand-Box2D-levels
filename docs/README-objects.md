@@ -8,6 +8,7 @@ because this was obvious option to make objects more portable.
 
 ## Contents
 - [ID](#id)
+  * [Reserved IDs](#reserved-ids)
 - [Platform](#platform)
 - [Box](#box)
 - [Circle](#circle)
@@ -27,6 +28,12 @@ To set ID (in this example `1337`) you just have to set its value like that:
     "...": "..."
   }
 ```
+
+### Reserved IDs
+Some IDs are reserved to be used in particular way and you shouldn't be assigning them manually to your own objects. Avoid assigning IDs in range `-10` and `10` as they can be reserved soon. You can see all the reserved IDs below:
+- `-1` - default ID for the objects that don't have their own proper ID.
+- `0` - general ID of the world options. For example, you can change BG color to red by setting value `255` of the parameter `"bg_r"` at object ID `0`.
+- `1` - Python variables scope. When you set some parameter of this object via `sandbox2d.set()` function you will, in fact, declare it as a new variable. Then you can access it via `sandbox2d.get()`. If you didn't declare it before it will set it to `0` and return it. Read more [here](./README-python.md).
 
 # Platform
 Platform is a static line which represents Box2D's `b2EdgeShape` with start & end points.
